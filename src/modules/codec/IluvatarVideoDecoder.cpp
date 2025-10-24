@@ -485,16 +485,16 @@ int IluvatarVideoDecoder::StopVideoSource() noexcept
     return 0;
 }
 
-void OnStreamChangedCallback(CUVIDFormat* pFormat) {
-    try
-    {
-        printf("Resolution changed to %dx%d\n", pFormat->picWidth, pFormat->picHeight);
-    }
-    catch (exception& e)
-    {
-        cerr << e.what();
-    }
-}
+// void OnStreamChangedCallback(CUVIDFormat* pFormat) {
+//     try
+//     {
+//         printf("Resolution changed to %dx%d\n", pFormat->picWidth, pFormat->picHeight);
+//     }
+//     catch (exception& e)
+//     {
+//         cerr << e.what();
+//     }
+// }
 
 IluvatarVideoDecoder::IluvatarVideoDecoder(CUcontext cuContext, int eCodec, CUstream cuStream, int id)
 {
@@ -525,9 +525,9 @@ IluvatarVideoDecoder::IluvatarVideoDecoder(CUcontext cuContext, int eCodec, CUst
 
     checkCudaErrors(cuvidCreateDecoder(p_impl->m_cuContext, &(p_impl->m_hDecoder), &(p_impl->m_cfg)));
 
-    CUVIDCALLBACK g_callback = { .pOnStreamChanged = OnStreamChangedCallback };
+    // CUVIDCALLBACK g_callback = { .pOnStreamChanged = OnStreamChangedCallback };
 
-    checkCudaErrors(cuvidRegisterCallback(&(p_impl->m_hDecoder), &g_callback));
+    // checkCudaErrors(cuvidRegisterCallback(&(p_impl->m_hDecoder), &g_callback));
 }
 
 IluvatarVideoDecoder::~IluvatarVideoDecoder()

@@ -53,8 +53,8 @@
                "nms_output0",
                "int_output1"
          ],
-         "onnx_file": "../models/yolov5/yolov5s_sim_cut_withnms.onnx",   #模型onnx路径
-         "engine_file": "../models/yolov5/yolov5s_sim_cut_withnms.engine"  #模型ixrt engine路径
+         "onnx_file": "../../models/yolov5/yolov5s_sim_cut_withnms.onnx",   #模型onnx路径
+         "engine_file": "../../models/yolov5/yolov5s_sim_cut_withnms.engine"  #模型ixrt engine路径
       }
    }
    ```
@@ -78,8 +78,8 @@
                "detection_scores",
                "detection_classes"
          ],
-         "onnx_file": "../models/ppyoloe/ppyoloe_plus_crn_s_80e_coco_640x640_sim_cut_withnms.onnx",      #模型onnx路径
-         "engine_file": "../models/ppyoloe/ppyoloe_plus_crn_s_80e_coco_640x640_sim_cut_withnms.engine"   #模型ixrt engine路径
+         "onnx_file": "../../models/ppyoloe/ppyoloe_plus_crn_s_80e_coco_640x640_sim_cut_withnms.onnx",      #模型onnx路径
+         "engine_file": "../../models/ppyoloe/ppyoloe_plus_crn_s_80e_coco_640x640_sim_cut_withnms.engine"   #模型ixrt engine路径
       },
       "pplcnet_params": {
          "resize_h": 224,
@@ -91,8 +91,8 @@
          "custom_outputs": [
                "softmax_1.tmp_0"
          ],
-         "onnx_file": "../models/pplcnet/PPLCNet_x1_0_infer_sim_reshape.onnx",
-         "engine_file": "../models/pplcnet/PPLCNet_x1_0_infer_sim_reshape.engine"
+         "onnx_file": "../../models/pplcnet/PPLCNet_x1_0_infer_sim_reshape.onnx",
+         "engine_file": "../../models/pplcnet/PPLCNet_x1_0_infer_sim_reshape.engine"
       }
    }
    ```
@@ -103,13 +103,19 @@
    - pipeline1: 单阶段模型推理，仅使用yolov5作为推理,log日志进入log文件下查看。
    第一个参数为device id，第二个参数为rtsp配置文件路径
    ```bash
-   ./pipeline1 0 ../config/rtsp_params.json
+   ./pipeline1 0 ../../config/rtsp_params.json
    ```
 
    - pipeline2: 二阶段模型推理，先进行ppyoloe检测，在进行pplcnet推理
    第一个参数为device id，第二个参数为rtsp配置文件路径
    ```bash
-   ./pipeline2 0 ../config/rtsp_params.json
+   ./pipeline2 0 ../../config/rtsp_params.json
+   ```
+
+   - pipeline_multi: 单阶段多卡模型推理，仅使用yolov5作为推理,log日志进入log文件下查看。
+   第一个参数为rtsp配置文件路径，第二个参数为模型参数文件
+   ```bash
+   ./pipeline_multi ../../config/rtsp_params_multi_gpu.json ../../config/pipeline_multi_gpu.json
    ```
 
 5. **效果展示:** 

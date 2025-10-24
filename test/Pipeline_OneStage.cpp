@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     RtspUrlManager                   rtsp_manager(argv[2]);
     const std::vector<RtspUrlParams> rtsp_sources = rtsp_manager.getUrls();
 
-    std::ifstream pipe_file("../config/pipeline_one_stage.json");
+    std::ifstream pipe_file("../../config/pipeline_one_stage.json");
     json          pipe_json;
     pipe_file >> pipe_json;
 

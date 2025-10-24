@@ -2,6 +2,7 @@
     "jpeg_maxBatch": 8,
     "jpeg_qsz": 64,
     "dec_qsz": 64,
+    "streams_per_gpu": 32,
     "yolov5s_params": {
         "resize_h": 640,
         "resize_w": 640,
@@ -13,7 +14,7 @@
             "nms_output0",
             "int_output1"
         ],
-        "onnx_file": "../../models/yolov5/yolov5s_sim_cut_withnms.onnx",
-        "engine_file": "../../models/yolov5/yolov5s_sim_cut_withnms.engine"
+        "onnx_file": "../../models/yolov5-v6/yolov5s_sim_cut_withnms.onnx",
+        "engine_file": "../../models/yolov5-v6/yolov5s_sim_cut_withnms.engine"
     }
 }
