@@ -470,7 +470,7 @@ std::vector<DecoderProcessorStats> PipeLineProcessorOneStage::CollectVideoProces
     return stats;
 }
 
-std::map<int, int> PipeLineProcessorOneStage::ChcekDecoderStautsAndRestart()
+std::map<int, int> PipeLineProcessorOneStage::CheckDecoderStatusAndRestart()
 {
     for (const auto& video_processor : _video_processores)
     {

@@ -65,7 +65,7 @@ int main(int argc, char* argv[])
     while (1)
     {
         std::this_thread::sleep_for(std::chrono::seconds(time_interval));
-        std::map<int, int> video_reset_vec = PipeLine->ChcekDecoderStautsAndRestart();
+        std::map<int, int> video_reset_vec = PipeLine->CheckDecoderStatusAndRestart();
 
         size_t dec_number  = PipeLine->GetDecFrameNumber();
         size_t jpeg_number = PipeLine->GetJpegFrameNumber();

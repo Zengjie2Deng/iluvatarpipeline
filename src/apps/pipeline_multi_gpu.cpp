@@ -154,9 +154,9 @@ std::vector<DecoderProcessorStats> SingleGPUProcessor::CollectVideoProcessorStat
     return _pipeline ? _pipeline->CollectVideoProcessorStats() : std::vector<DecoderProcessorStats>();
 }
 
-std::map<int, int> SingleGPUProcessor::ChcekDecoderStautsAndRestart()
+std::map<int, int> SingleGPUProcessor::CheckDecoderStatusAndRestart()
 {
-    return _pipeline ? _pipeline->ChcekDecoderStautsAndRestart() : std::map<int, int>();
+    return _pipeline ? _pipeline->CheckDecoderStatusAndRestart() : std::map<int, int>();
 }
 
 int SingleGPUProcessor::CollectVideoProcessorNumbers()

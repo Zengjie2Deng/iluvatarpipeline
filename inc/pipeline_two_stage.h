@@ -143,7 +143,7 @@ public:
     size_t GetPPLCNetPreQWaitNum() { return _pplcnet_processor->GetPreQWaitNum(); }
     size_t GetPPLCNetPreQDropNum() { return _pplcnet_processor->GetPreQDropNum(); }
 
-    std::map<int, int>                 ChcekDecoderStautsAndRestart();
+    std::map<int, int>                 CheckDecoderStatusAndRestart();
     std::vector<DecoderProcessorStats> CollectVideoProcessorStats();
     int                                CollectVideoProcessorNumbers() { return _video_processores.size(); }
 

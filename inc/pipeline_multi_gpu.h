@@ -50,7 +50,7 @@ public:
     
     // 获取视频处理器统计
     std::vector<DecoderProcessorStats> CollectVideoProcessorStats();
-    std::map<int, int> ChcekDecoderStautsAndRestart();
+    std::map<int, int> CheckDecoderStatusAndRestart();
     int CollectVideoProcessorNumbers();
     
     int GetGPUId() const { return _gpu_id; }

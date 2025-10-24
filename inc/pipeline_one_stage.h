@@ -103,7 +103,7 @@ public:
     size_t GetYoloV5ResQWaitNum() { return _yolov5_res_queue->size(); }
     size_t GetYoloV5ResQDropNum() { return _yolov5_res_queue->drops_count(); }
 
-    std::map<int, int>                 ChcekDecoderStautsAndRestart();
+    std::map<int, int>                 CheckDecoderStatusAndRestart();
     std::vector<DecoderProcessorStats> CollectVideoProcessorStats();
     int                                CollectVideoProcessorNumbers() { return _video_processores.size(); }
 
